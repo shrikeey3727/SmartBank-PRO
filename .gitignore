@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Env files
+.env
+
+# Test output
+coverage/
+
+# DB dumps or cache
+*.sqlite
+*.db
+*.sql.bak
+
+# OS files
+.DS_Store
+Thumbs.db

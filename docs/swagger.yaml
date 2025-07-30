@@ -1,0 +1,52 @@
+openapi: 3.0.3
+info:
+  title: SmartBank Pro API
+  version: 1.0.0
+  description: >
+    Enterprise-Grade Banking API built with Node.js, Express, and MySQL.
+servers:
+  - url: http://localhost:3000
+
+paths:
+  /api/customers:
+    get:
+      summary: Get all customers
+      responses:
+        '200':
+          description: List of customers
+    post:
+      summary: Create a new customer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerInput'
+      responses:
+        '201':
+          description: Customer created
+
+  /api/accounts:
+    get:
+      summary: Get all accounts
+    post:
+      summary: Create account
+
+  /api/transactions:
+    get:
+      summary: Get all transactions
+    post:
+      summary: Create transaction
+
+  /api/reports/summary:
+    get:
+      summary: Get bank-wide report
+
+components:
+  schemas:
+    CustomerInput:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
